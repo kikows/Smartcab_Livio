@@ -1,0 +1,478 @@
+/-----------------------------------------
+| State-action rewards from Q-Learning
+\-----------------------------------------
+
+State: 0, Waypoint: left, Light: red, Oncoming: right, Left: left
+ -- forward : -4.60
+ -- right : 0.00
+ -- None : 0.88
+ -- left : 0.00
+
+State: 1, Waypoint: left, Light: red, Oncoming: None, Left: None
+ -- forward : -9.65
+ -- right : 0.94
+ -- None : 1.86
+ -- left : -4.55
+
+State: 2, Waypoint: left, Light: red, Oncoming: left, Left: None
+ -- forward : -5.16
+ -- right : 0.13
+ -- None : 1.43
+ -- left : -16.66
+
+State: 3, Waypoint: left, Light: green, Oncoming: None, Left: None
+ -- forward : 1.14
+ -- right : 1.08
+ -- None : -4.17
+ -- left : 1.30
+
+State: 4, Waypoint: forward, Light: red, Oncoming: None, Left: right
+ -- forward : 0.00
+ -- right : 0.54
+ -- None : 0.00
+ -- left : 0.00
+
+State: 5, Waypoint: left, Light: red, Oncoming: right, Left: None
+ -- forward : -5.09
+ -- right : 0.48
+ -- None : 1.61
+ -- left : 0.00
+
+State: 6, Waypoint: left, Light: red, Oncoming: None, Left: left
+ -- forward : 0.00
+ -- right : 0.19
+ -- None : 1.25
+ -- left : -4.96
+
+State: 7, Waypoint: forward, Light: green, Oncoming: forward, Left: None
+ -- forward : 0.00
+ -- right : 0.66
+ -- None : -2.33
+ -- left : -10.24
+
+State: 8, Waypoint: forward, Light: green, Oncoming: right, Left: None
+ -- forward : 1.66
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 9, Waypoint: forward, Light: red, Oncoming: None, Left: None
+ -- forward : -8.87
+ -- right : 0.14
+ -- None : 1.19
+ -- left : -24.51
+
+State: 10, Waypoint: forward, Light: green, Oncoming: None, Left: None
+ -- forward : 1.41
+ -- right : 0.00
+ -- None : -4.89
+ -- left : 0.93
+
+State: 11, Waypoint: forward, Light: green, Oncoming: left, Left: None
+ -- forward : 1.53
+ -- right : 0.55
+ -- None : -3.44
+ -- left : 0.75
+
+State: 12, Waypoint: right, Light: green, Oncoming: forward, Left: forward
+ -- forward : 0.00
+ -- right : 1.22
+ -- None : 0.00
+ -- left : -10.45
+
+State: 13, Waypoint: forward, Light: green, Oncoming: None, Left: forward
+ -- forward : 0.55
+ -- right : 1.16
+ -- None : -4.40
+ -- left : 0.22
+
+State: 14, Waypoint: right, Light: red, Oncoming: left, Left: None
+ -- forward : -7.04
+ -- right : 2.01
+ -- None : 0.33
+ -- left : -6.96
+
+State: 15, Waypoint: right, Light: green, Oncoming: left, Left: None
+ -- forward : 0.55
+ -- right : 0.25
+ -- None : -2.46
+ -- left : 0.11
+
+State: 16, Waypoint: right, Light: green, Oncoming: None, Left: forward
+ -- forward : 0.34
+ -- right : 1.66
+ -- None : 0.00
+ -- left : -0.06
+
+State: 17, Waypoint: right, Light: red, Oncoming: None, Left: left
+ -- forward : -6.87
+ -- right : 0.00
+ -- None : 0.52
+ -- left : -5.09
+
+State: 18, Waypoint: right, Light: green, Oncoming: None, Left: None
+ -- forward : 0.91
+ -- right : 1.71
+ -- None : -5.04
+ -- left : 0.67
+
+State: 19, Waypoint: left, Light: green, Oncoming: None, Left: left
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 1.31
+
+State: 20, Waypoint: left, Light: green, Oncoming: right, Left: right
+ -- forward : 0.00
+ -- right : 0.62
+ -- None : 0.00
+ -- left : 0.00
+
+State: 21, Waypoint: right, Light: red, Oncoming: None, Left: None
+ -- forward : -4.98
+ -- right : 2.22
+ -- None : 0.74
+ -- left : -12.12
+
+State: 22, Waypoint: left, Light: green, Oncoming: left, Left: None
+ -- forward : 0.00
+ -- right : 0.06
+ -- None : -2.19
+ -- left : 1.94
+
+State: 23, Waypoint: right, Light: red, Oncoming: forward, Left: right
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -4.82
+
+State: 24, Waypoint: right, Light: red, Oncoming: None, Left: right
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -4.88
+
+State: 25, Waypoint: forward, Light: red, Oncoming: forward, Left: None
+ -- forward : -4.99
+ -- right : 1.26
+ -- None : 0.54
+ -- left : -8.38
+
+State: 26, Waypoint: forward, Light: red, Oncoming: None, Left: forward
+ -- forward : 0.00
+ -- right : -15.36
+ -- None : 1.09
+ -- left : -20.39
+
+State: 27, Waypoint: forward, Light: red, Oncoming: right, Left: left
+ -- forward : 0.00
+ -- right : 0.46
+ -- None : 0.00
+ -- left : 0.00
+
+State: 28, Waypoint: left, Light: green, Oncoming: None, Left: forward
+ -- forward : 0.74
+ -- right : 0.32
+ -- None : -4.08
+ -- left : 0.47
+
+State: 29, Waypoint: right, Light: green, Oncoming: None, Left: right
+ -- forward : 0.00
+ -- right : 1.42
+ -- None : -2.28
+ -- left : 0.00
+
+State: 30, Waypoint: forward, Light: red, Oncoming: None, Left: left
+ -- forward : -7.34
+ -- right : 0.00
+ -- None : 1.88
+ -- left : -5.33
+
+State: 31, Waypoint: forward, Light: red, Oncoming: right, Left: None
+ -- forward : -7.53
+ -- right : 0.72
+ -- None : 0.00
+ -- left : -19.73
+
+State: 32, Waypoint: left, Light: green, Oncoming: forward, Left: right
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -2.17
+ -- left : 0.00
+
+State: 33, Waypoint: forward, Light: red, Oncoming: left, Left: None
+ -- forward : 0.00
+ -- right : 0.38
+ -- None : 1.94
+ -- left : -5.36
+
+State: 34, Waypoint: left, Light: red, Oncoming: forward, Left: None
+ -- forward : -4.50
+ -- right : 0.24
+ -- None : 0.00
+ -- left : 0.00
+
+State: 35, Waypoint: left, Light: green, Oncoming: None, Left: right
+ -- forward : 0.00
+ -- right : 1.31
+ -- None : -2.26
+ -- left : 0.00
+
+State: 36, Waypoint: right, Light: green, Oncoming: forward, Left: None
+ -- forward : 0.00
+ -- right : 1.37
+ -- None : -4.21
+ -- left : -10.18
+
+State: 37, Waypoint: left, Light: green, Oncoming: right, Left: None
+ -- forward : 0.37
+ -- right : 0.00
+ -- None : -3.80
+ -- left : 0.00
+
+State: 38, Waypoint: left, Light: red, Oncoming: None, Left: forward
+ -- forward : 0.00
+ -- right : -9.55
+ -- None : 2.12
+ -- left : 0.00
+
+State: 39, Waypoint: right, Light: green, Oncoming: left, Left: right
+ -- forward : 0.00
+ -- right : 0.48
+ -- None : 0.00
+ -- left : 0.00
+
+State: 40, Waypoint: forward, Light: red, Oncoming: forward, Left: right
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.27
+ -- left : 0.00
+
+State: 41, Waypoint: forward, Light: red, Oncoming: forward, Left: forward
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.00
+ -- left : -19.97
+
+State: 42, Waypoint: left, Light: red, Oncoming: None, Left: right
+ -- forward : 0.00
+ -- right : 0.22
+ -- None : 0.00
+ -- left : -5.22
+
+State: 43, Waypoint: right, Light: green, Oncoming: None, Left: left
+ -- forward : -0.13
+ -- right : 0.75
+ -- None : 0.00
+ -- left : 0.00
+
+State: 44, Waypoint: right, Light: green, Oncoming: right, Left: None
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -3.47
+ -- left : -9.83
+
+State: 45, Waypoint: right, Light: red, Oncoming: None, Left: forward
+ -- forward : 0.00
+ -- right : -10.47
+ -- None : 1.21
+ -- left : -20.49
+
+State: 46, Waypoint: forward, Light: green, Oncoming: None, Left: left
+ -- forward : 1.61
+ -- right : 0.04
+ -- None : 0.00
+ -- left : 0.00
+
+State: 47, Waypoint: right, Light: green, Oncoming: left, Left: forward
+ -- forward : 0.18
+ -- right : 1.90
+ -- None : 0.00
+ -- left : 0.00
+
+State: 48, Waypoint: right, Light: red, Oncoming: right, Left: left
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.54
+ -- left : 0.00
+
+State: 49, Waypoint: right, Light: red, Oncoming: right, Left: None
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.31
+ -- left : -20.34
+
+State: 50, Waypoint: left, Light: green, Oncoming: forward, Left: None
+ -- forward : 0.29
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -9.57
+
+State: 51, Waypoint: left, Light: green, Oncoming: right, Left: forward
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -10.34
+
+State: 52, Waypoint: forward, Light: red, Oncoming: forward, Left: left
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -4.81
+
+State: 53, Waypoint: left, Light: red, Oncoming: left, Left: forward
+ -- forward : -19.65
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -20.37
+
+State: 54, Waypoint: right, Light: red, Oncoming: right, Left: forward
+ -- forward : 0.00
+ -- right : -9.74
+ -- None : 0.00
+ -- left : 0.00
+
+State: 55, Waypoint: right, Light: red, Oncoming: left, Left: forward
+ -- forward : -19.65
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 56, Waypoint: left, Light: red, Oncoming: right, Left: forward
+ -- forward : 0.00
+ -- right : -9.97
+ -- None : 0.00
+ -- left : 0.00
+
+State: 57, Waypoint: right, Light: red, Oncoming: forward, Left: None
+ -- forward : -19.75
+ -- right : 0.00
+ -- None : 0.94
+ -- left : -4.79
+
+State: 58, Waypoint: right, Light: red, Oncoming: left, Left: right
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -4.95
+
+State: 59, Waypoint: forward, Light: green, Oncoming: None, Left: right
+ -- forward : 0.66
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 60, Waypoint: right, Light: green, Oncoming: forward, Left: right
+ -- forward : -0.10
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 61, Waypoint: left, Light: red, Oncoming: forward, Left: forward
+ -- forward : 0.00
+ -- right : -10.25
+ -- None : 0.00
+ -- left : -19.88
+
+State: 62, Waypoint: forward, Light: red, Oncoming: left, Left: right
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.97
+ -- left : -5.07
+
+State: 63, Waypoint: right, Light: red, Oncoming: forward, Left: forward
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.48
+ -- left : -19.75
+
+State: 64, Waypoint: right, Light: green, Oncoming: right, Left: right
+ -- forward : 0.00
+ -- right : 1.09
+ -- None : 0.00
+ -- left : 0.00
+
+State: 65, Waypoint: left, Light: red, Oncoming: left, Left: left
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.34
+ -- left : 0.00
+
+State: 66, Waypoint: left, Light: green, Oncoming: left, Left: right
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.72
+
+State: 67, Waypoint: right, Light: red, Oncoming: forward, Left: left
+ -- forward : 0.00
+ -- right : 1.13
+ -- None : 0.00
+ -- left : 0.00
+
+State: 68, Waypoint: left, Light: red, Oncoming: left, Left: right
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -5.01
+
+State: 69, Waypoint: left, Light: green, Oncoming: left, Left: left
+ -- forward : 0.00
+ -- right : 0.47
+ -- None : -2.68
+ -- left : 0.00
+
+State: 70, Waypoint: forward, Light: green, Oncoming: forward, Left: forward
+ -- forward : 1.13
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 71, Waypoint: right, Light: green, Oncoming: forward, Left: left
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -9.65
+
+State: 72, Waypoint: left, Light: green, Oncoming: left, Left: forward
+ -- forward : -0.07
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.55
+
+State: 73, Waypoint: left, Light: red, Oncoming: forward, Left: right
+ -- forward : -4.58
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 74, Waypoint: left, Light: green, Oncoming: forward, Left: forward
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : -2.78
+ -- left : 0.00
+
+State: 75, Waypoint: forward, Light: green, Oncoming: right, Left: forward
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 76, Waypoint: left, Light: green, Oncoming: forward, Left: left
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 77, Waypoint: forward, Light: green, Oncoming: left, Left: forward
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+State: 78, Waypoint: forward, Light: red, Oncoming: left, Left: left
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
